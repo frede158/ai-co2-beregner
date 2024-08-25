@@ -19,11 +19,15 @@ async function getCarbonIntensity(state) {
 }
 
 function formatHoursToDays(hours) {
-    if (hours >= 1000) {
-        const days = hours / 24;
-        return `${days.toFixed(2)} dage`;
+    const days = Math.floor(hours / 24);
+    const years = Math.floor(days / 365);
+    const remainingDays = days % 365;
+
+    if (years > 0) {
+        return `${years} år og ${remainingDays} dage`;
+    } else {
+        return `${days} dage`;
     }
-    return `${hours.toFixed(2)} timer`;
 }
 
 function formatNumber(num) {
