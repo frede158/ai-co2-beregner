@@ -19,22 +19,28 @@
     </header>
     <main>
        <section class="co2-beregner">
-    <h2>Hvor meget bruger i AI?</h2>
-    <label for="monthlyUsage">Samlet antal prompts via AI om måneden:</label>
-    <input type="number" id="monthlyUsage" name="monthlyUsage" min="0" required>
-    <br>
-    
-    <label for="modelSelect">Vælg AI-model:</label>
-    <select id="modelSelect">
-        <option value="4">ChatGPT-4</option>
-        <option value="4-mini">ChatGPT-4 Mini</option>
-    </select>
-    <br>
-    
-    <button onclick="calculateCO2()">Beregn CO2</button>
-    <p id="result"></p>
-    <p id="yearlyResult"></p>
-</section>     
+            <h2>Hvor meget bruger i AI?</h2>
+            <label for="monthlyUsage">Samlet antal prompts via AI om måneden:</label>
+            <input type="number" id="monthlyUsage" name="monthlyUsage" min="0" required>
+            <br>
+            
+            <label for="modelSelect">Vælg AI-model:</label>
+            <select id="modelSelect">
+                <option value="4">ChatGPT-4</option>
+                <option value="4-mini">ChatGPT-4 Mini</option>
+            </select>
+            <br>
+
+            <label for="monthRange">Vælg antal måneder:</label>
+            <input type="range" id="monthRange" name="monthRange" min="1" max="12" value="1" title="Vælg antal måneder">
+            <span id="monthValue">1 måned</span>
+            <br>
+            
+            
+            <button onclick="calculateCO2()">Beregn CO2</button>
+            <p id="result"></p>
+            <p id="yearlyResult"></p>
+        </section>     
     </main>
     <section class="results">
         <section class="result-box"> <!-- Skjul som standard -->
