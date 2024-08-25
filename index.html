@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2 BEREGNER FOR AI</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">CO2 BEREGNER FOR AI</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beregner</a></li>
+                <li><a href="forklaring.html">Forklaring af beregner</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+       <section class="co2-beregner">
+    <h2>Hvor meget bruger i AI?</h2>
+    <label for="monthlyUsage">Samlet antal prompts via AI om måneden:</label>
+    <input type="number" id="monthlyUsage" name="monthlyUsage" min="0" required>
+    <br>
+    
+    <label for="modelSelect">Vælg AI-model:</label>
+    <select id="modelSelect">
+        <option value="4">ChatGPT-4</option>
+        <option value="4-mini">ChatGPT-4 Mini</option>
+    </select>
+    <br>
+    
+    <button onclick="calculateCO2()">Beregn CO2</button>
+    <p id="result"></p>
+    <p id="yearlyResult"></p>
+</section>     
+    </main>
+    <section class="results">
+        <section class="result-box"> <!-- Skjul som standard -->
+            <h3>⚡Mobilopladninger</h3>
+            <div id="chargeResult"></div>
+        </section>
+        <section class="result-box"> <!-- Skjul som standard -->
+            <h3>💧Vand til nedkølning</h3>
+            <div id="waterUsageResult"></div> <!-- Vandforbrug pr. prompt -->
+        </section>
+        <section class="result-box"> <!-- Skjul som standard -->
+            <h3>💡LED-pærer</h3>
+            <div id="lightUsageResult"></div> <!-- Pærer der lyser i om året pr. prompt -->
+        </section>
+        <section class="result-box"> <!-- Skjul som standard -->
+            <h3>🔍Google søgninger</h3>
+            <div id="searchResult"></div> <!-- Google søgninger pr år -->
+        </section>
+    </section>
+    <footer>
+        <p>&copy; 2024 CO2 BEREGNER FOR AI</p>
+    </footer>
+    <script src="js/js.js"></script>
+</body>
+</html>

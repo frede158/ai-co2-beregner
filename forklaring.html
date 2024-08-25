@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forklaring af CO2 Beregner</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">CO2 BEREGNER FOR AI</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beregner</a></li>
+                <li><a href="forklaring.html">Forklaring af beregner</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="co2-beregner2">
+            <h2>Hvordan vi beregner CO2-udledning og ressourceforbrug</h2>
+            
+            <h3>1. Energi pr. brug</h3>
+            <p>Vi beregner energiforbruget pr. brug baseret på den valgte model. ChatGPT-4 bruger 0.19 kWh pr. brug, mens ChatGPT-4 Mini bruger 0.019 kWh. <a href="https://di.ku.dk/Nyheder/2023/hvad-kan-vi-goere-ved-ais-stigende-co2-aftryk/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a>
+            <p>Dette trin hjælper os med at forstå, hvor meget energi der bruges hver gang du interagerer med AI'en.</p>
+            <p><strong>Beregning:</strong> Energi pr. brug = 0.19 kWh (ChatGPT-4) eller 0.019 kWh (ChatGPT-4 Mini)</p>
+
+            <h3>2. Total kWh pr. måned</h3>
+            <p>Det samlede energiforbrug pr. måned beregnes ved at gange det månedlige antal brug med energiforbruget pr. brug.
+            <p>Her får vi et overblik over, hvor meget energi du bruger i løbet af en måned.</p>
+            <p><strong>Beregning:</strong> Total kWh pr. måned = (Månedligt antal brug) × (Energi pr. brug)</p>
+
+            <h3>3. Total CO2-udledning</h3>
+            <p>Den samlede CO2-udledning i kilogram beregnes ved at gange det samlede energiforbrug pr. måned med den gennemsnitlige kulstofintensitet i Texas. Der findes ingen offentlig information fra OpenAI, der bekræfter, at dette er gyldigt. Dog viste research, at der var mest data, der indikerede, at dette var den korrekte lokation. <a href="https://agio.com/where-is-chatgpt-hosted/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a> <a href="https://msandbu.org/openai-chatgpt-and-security-and-risks/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a>
+            <p>Dette trin konverterer dit energiforbrug til CO2-udledning, så vi kan se den miljømæssige påvirkning.</p>
+            <p><strong>Beregning:</strong> Total CO2-udledning = (Total kWh pr. måned) × (Gennemsnitlig kulstofintensitet) / 1000</p>
+
+            <h3>4. Årlig CO2-udledning</h3>
+            <p>Den årlige CO2-udledning beregnes ved at gange den månedlige CO2-udledning med 12.</p>
+            <p>Her får vi et estimat for, hvor meget CO2 du udleder på et år baseret på dit månedlige forbrug.</p>
+            <p><strong>Beregning:</strong> Årlig CO2-udledning = (Månedlig CO2-udledning) × 12</p>
+
+            <h3>5. Mobilopladninger</h3>
+            <p>Vi beregner, hvor mange gange en mobiltelefon kan oplades baseret på det samlede energiforbrug pr. måned. <a href="https://www.av-cables.dk/artikel/hvad-koster-det-at-oplade-mobiltelefonen.html" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a>
+            <p>Dette giver en konkret forståelse af, hvor meget energi der bruges i forhold til dagligdags aktiviteter som opladning af en telefon.</p>
+            <p><strong>Beregning:</strong> Antal opladninger = (Total kWh pr. måned) / (Energi pr. opladning)</p>
+
+            <h3>6. Årligt vandforbrug</h3>
+            <p>Vandforbruget pr. brug beregnes ved at dividere det samlede vandforbrug med antallet af brug. Det årlige vandforbrug beregnes ved at gange det månedlige antal brug med vandforbruget pr. brug og derefter med 12. <a href="https://24tech.dk/nyheder/kunstig-intelligens/ai-chatbots-faar-it-giganters-vandforbrug-til-at-eksplodere/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a>
+            <p>Dette trin viser, hvor meget vand der bruges i forbindelse med din brug af AI'en.</p>
+            <p><strong>Beregning:</strong> Årligt vandforbrug = (Månedligt antal brug) × (Vandforbrug pr. brug) × 12</p>
+
+            <h3>7. Timer pæren kan lyse</h3>
+            <p>For at beregne, hvor mange timer en pære kan lyse, tager vi højde for pærens wattforbrug. Dette har vi sat på 7 watt. <a href="https://www.batteribyen.dk/led-belysning-information" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a>
+            <p>Dette giver en idé om, hvor meget energi der bruges i forhold til belysning, hvilket kan være en nyttig sammenligning.</p>
+            <p><strong>Beregning:</strong> Timer pæren kan lyse = (Total kWh pr. måned) / (Wattforbrug pr. time)</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CO2 BEREGNER FOR AI</p>
+    </footer>
+    <script src="js/js.js"></script>
+</body>
+</html>

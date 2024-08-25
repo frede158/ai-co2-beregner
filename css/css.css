@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat';
+  background-color: #dfdfdf;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+header {
+  background-color: none;
+  color: black;
+  padding: 30px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+main {
+  flex: 1; /* Allow main to grow and fill the available space */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+.co2-beregner {
+  background-color: white; /* Optional: add a background color */
+  padding: 20px; /* Optional: add some padding */
+  border-radius: 5px; /* Optional: add rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+  text-align: center; /* Center text inside the section */
+  margin-bottom: 5%;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  margin: 10px 0;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  width: 100px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
+  transition: 0.2s;
+}
+
+#result, #yearlyResult {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 600px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  nav ul {
+      flex-direction: column;
+      margin-top: 10px;
+  }
+
+  nav ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+  }
+}
+
+
+.results {
+  display: flex;
+  justify-content: space-between;
+}
+.result-box {
+  background-color: white; /* Optional: add a background color */
+  padding: 20px; /* Optional: add some padding */
+  border-radius: 5px; /* Optional: add rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+  text-align: center; /* Center text inside the section */
+  width: 40%; /* Juster bredden så de passer ved siden af hinanden */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin: 30px;
+  display: none; /* Skjul som standard */
+}
+@media only screen and (max-width: 768px) {
+  .results {
+      display: grid; /* Enable Grid layout */
+      grid-template-columns: 1fr; /* Create a single column */
+      gap: 10px; /* Space between result items */
+      width: 1000px;
+      align-items: center; /* Center items horizontally */
+      justify-content: center; /* Center items vertically if needed */
+  }
+}
+
+input[type="number"], select {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%; /* Gør dem bredere */
+  max-width: 300px; /* Sæt en maksimal bredde */
+  border: 1px solid #ccc; /* Grå kant */
+  border-radius: 5px; /* Runde hjørner */
+  font-size: 16px; /* Større tekst */
+  transition: border-color 0.3s; /* Blød overgang for kantfarve */
+}
+
+input[type="number"]:focus, select:focus {
+  border-color: #28a745; /* Grøn kant ved fokus */
+  outline: none; /* Fjern standard fokus outline */
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px 15px; /* Mere polstring for knappen */
+  font-size: 16px; /* Større tekst */
+  transition: background-color 0.2s; /* Blød overgang for baggrundsfarve */
+}
+
+button:hover {
+  background-color: #218838; /* Mørkere grøn ved hover */
+}
+
+.bold {
+  font-size: 700; /* Gør teksten fed */
+}
+
+.co2-beregner2 {
+  background-color: white; /* Baggrundsfarve for sektionen */
+  padding: 40px; /* Polstring */
+  padding-top: 50px;
+  border-radius: 5px; /* Runde hjørner */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Skygge */
+  text-align: left; /* Venstrejusteret tekst */
+  margin: 20px; /* Margin omkring sektionen */
+  width: 70%;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .co2-beregner2 {
+    width: 100%;
+  }
+}
+
+.co2-beregner2 h2, 
+.co2-beregner2 p {
+    padding: 5px; /* Tilføj padding til overskrifter og afsnit */
+}
+
+
+h2 {
+  margin-bottom: 15px; /* Margin under overskriften */
+}
+
+ol {
+  margin-left: 20px; /* Indrykning for ordnet liste */
+}
+
+ul {
+  margin-left: 20px; /* Indrykning for uordnet liste */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.kilde {
+  color: blue;
+  text-decoration: underline;
+}
