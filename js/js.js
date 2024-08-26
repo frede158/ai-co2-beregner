@@ -1,4 +1,5 @@
 const API_KEY = 'LVFpDNvtbT0r7'; // Erstat med din API-nøgle
+const PUE = 1.125; // Gennemsnitlig PUE for Microsoft Azure-datacentre
 
 async function getCarbonIntensity(state) {
     try {
@@ -50,8 +51,8 @@ async function calculateCO2() {
     }
 
     // EnergiBrug pr Prompt baseret på valgt model
-    const kWhPerUse = model === '4' ? 0.19 : 0.019; // 0.19 kWh for ChatGPT-4, 0.019 kWh for ChatGPT-4 Mini
-    const totalKWhPerMonth = monthlyUsage * kWhPerUse; // Total kWh pr. måned
+    const kWhPerUse = model === '4' ? 0.1938 : 0.01938; // 0.19 kWh for ChatGPT-4, 0.019 kWh for ChatGPT-4 Mini
+    const totalKWhPerMonth = monthlyUsage * kWhPerUse * PUE; // Juster total kWh pr. måned med PUE
     const totalCO2 = (totalKWhPerMonth * averageCarbonIntensity) / 1000; // omdanne til kg CO2
     const totalCO2ForMonths = totalCO2 * months; // Beregn CO2 for det valgte antal måneder
 

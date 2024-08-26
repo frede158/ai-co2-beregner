@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   background-color: #dfdfdf;
   color: #333;
   display: flex;
@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background-color: none;
+  background-color: transparent;
   color: black;
   padding: 30px 80px;
   display: flex;
@@ -38,18 +38,18 @@ nav ul li a {
 }
 
 main {
-  flex: 1; /* Allow main to grow and fill the available space */
+  flex: 1;
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .co2-beregner {
-  background-color: white; /* Optional: add a background color */
-  padding: 20px; /* Optional: add some padding */
-  border-radius: 5px; /* Optional: add rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
-  text-align: center; /* Center text inside the section */
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
   margin-bottom: 5%;
 }
 
@@ -73,11 +73,11 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.2s;
 }
 
 button:hover {
   background-color: #218838;
-  transition: 0.2s;
 }
 
 #result, #yearlyResult {
@@ -93,95 +93,83 @@ footer {
 
 @media (max-width: 600px) {
   header {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   nav ul {
-      flex-direction: column;
-      margin-top: 10px;
+    flex-direction: column;
+    margin-top: 10px;
   }
 
   nav ul li {
-      margin-left: 0;
-      margin-bottom: 10px;
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 }
-
 
 .results {
   display: flex;
   justify-content: space-between;
 }
+
 .result-box {
-  background-color: white; /* Optional: add a background color */
-  padding: 20px; /* Optional: add some padding */
-  border-radius: 5px; /* Optional: add rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
-  text-align: center; /* Center text inside the section */
-  width: 40%; /* Juster bredden så de passer ved siden af hinanden */
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 40%;
   border: 1px solid #ccc;
-  box-sizing: border-box;
   margin: 30px;
-  display: none; /* Skjul som standard */
+  display: none;
 }
+
 @media only screen and (max-width: 768px) {
   .results {
-      display: grid; /* Enable Grid layout */
-      grid-template-columns: 1fr; /* Create a single column */
-      gap: 10px; /* Space between result items */
-      width: 1000px;
-      align-items: center; /* Center items horizontally */
-      justify-content: center; /* Center items vertically if needed */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 input[type="number"], select {
   padding: 10px;
   margin: 10px 0;
-  width: 100%; /* Gør dem bredere */
-  max-width: 300px; /* Sæt en maksimal bredde */
-  border: 1px solid #ccc; /* Grå kant */
-  border-radius: 5px; /* Runde hjørner */
-  font-size: 16px; /* Større tekst */
-  transition: border-color 0.3s; /* Blød overgang for kantfarve */
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
 }
 
 input[type="number"]:focus, select:focus {
-  border-color: #28a745; /* Grøn kant ved fokus */
-  outline: none; /* Fjern standard fokus outline */
+  border-color: #28a745;
+  outline: none;
 }
 
 button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
   width: 50%;
-  border-radius: 5px;
-  padding: 10px 15px; /* Mere polstring for knappen */
-  font-size: 16px; /* Større tekst */
-  transition: background-color 0.2s; /* Blød overgang for baggrundsfarve */
-}
-
-button:hover {
-  background-color: #218838; /* Mørkere grøn ved hover */
+  padding: 10px 15px;
+  font-size: 16px;
 }
 
 .bold {
-  font-size: 700; /* Gør teksten fed */
+  font-weight: bold;
 }
 
 .co2-beregner2 {
-  background-color: white; /* Baggrundsfarve for sektionen */
-  padding: 40px; /* Polstring */
-  padding-top: 50px;
-  border-radius: 5px; /* Runde hjørner */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Skygge */
-  text-align: left; /* Venstrejusteret tekst */
-  margin: 20px; /* Margin omkring sektionen */
+  background-color: white;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin: 20px;
   width: 70%;
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -192,20 +180,15 @@ button:hover {
 
 .co2-beregner2 h2, 
 .co2-beregner2 p {
-    padding: 5px; /* Tilføj padding til overskrifter og afsnit */
+  padding: 5px;
 }
-
 
 h2 {
-  margin-bottom: 15px; /* Margin under overskriften */
+  margin-bottom: 15px;
 }
 
-ol {
-  margin-left: 20px; /* Indrykning for ordnet liste */
-}
-
-ul {
-  margin-left: 20px; /* Indrykning for uordnet liste */
+ol, ul {
+  margin-left: 20px;
 }
 
 a {
@@ -239,8 +222,4 @@ input[type="range"]::-webkit-slider-thumb {
 
 input[type="range"]::-webkit-slider-thumb:hover {
   background: #45a049;
-}
-
-.result-box {
-  display: none; /* Skjul som standard */
 }
