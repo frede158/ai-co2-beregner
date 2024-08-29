@@ -1,22 +1,9 @@
-const API_KEY = 'LVFpDNvtbT0r7'; // Erstat med din API-nøgle
 const PUE = 1.125; // Gennemsnitlig PUE for Microsoft Azure-datacentre
+let carbonIntensity = 403; // Definer en variabel til carbon intensitet
 
-async function getCarbonIntensity(state) {
-    try {
-        const response = await fetch(`https://api.electricitymap.org/v3/carbon-intensity/latest?zone=${state}`, {
-            headers: {
-                'auth-token': API_KEY // Brug API_KEY her
-            }
-        });
-        if (!response.ok) {
-            throw new Error(`Netværksrespons var ikke ok: ${response.statusText}`);
-        }
-        const data = await response.json();
-        return data.carbonIntensity; // Returner carbon intensity
-    } catch (error) {
-        console.error('Der var et problem med fetch operationen:', error);
-        return null;
-    }
+// Funktion til at opdatere carbon intensitet
+function updateCarbonIntensity(newIntensity) {
+    carbonIntensity = newIntensity; // Opdater carbon intensitet
 }
 
 function formatHoursToDays(hours) {
@@ -39,21 +26,17 @@ async function calculateCO2() {
     const monthlyUsage = document.getElementById('monthlyUsage').value;
     const model = document.getElementById('modelSelect').value; // Hent valgt model
     const months = document.getElementById('monthRange').value; // Hent valgt antal måneder
-    const states = ['US-CAL-CISO-fjern', 'US-MIDA-PJM-fjern', 'US-TEX-ERCO', 'US-NW-TPWR-fjern'];
-    const carbonIntensities = await Promise.all(states.map(getCarbonIntensity));
 
-    const validIntensities = carbonIntensities.filter(intensity => intensity !== null);
-    const averageCarbonIntensity = validIntensities.reduce((sum, intensity) => sum + intensity, 0) / validIntensities.length;
-
-    if (isNaN(averageCarbonIntensity)) {
-        document.getElementById('result').innerText = 'Kunne ikke hente carbon intensitet. Tjek venligst din API-nøgle og prøv igen.';
+    // Tjek om carbon intensity er sat
+    if (carbonIntensity === 0) {
+        document.getElementById('result').innerText = 'Carbon intensitet er ikke sat. Opdater venligst carbon intensitet.';
         return;
     }
 
     // EnergiBrug pr Prompt baseret på valgt model
-    const kWhPerUse = model === '4' ? 0.1938 : 0.01938; // 0.19 kWh for ChatGPT-4, 0.019 kWh for ChatGPT-4 Mini
+    const kWhPerUse = model === '4' ? 0.04845 : 0.0004845; // 0.04845 kWh for ChatGPT-4, 0.0004845 kWh for ChatGPT-4 Mini
     const totalKWhPerMonth = monthlyUsage * kWhPerUse * PUE; // Juster total kWh pr. måned med PUE
-    const totalCO2 = (totalKWhPerMonth * averageCarbonIntensity) / 1000; // omdanne til kg CO2
+    const totalCO2 = (totalKWhPerMonth * carbonIntensity) / 1000; // omdanne til kg CO2
     const totalCO2ForMonths = totalCO2 * months; // Beregn CO2 for det valgte antal måneder
 
     // Beregn mobilopladninger
@@ -89,15 +72,46 @@ async function calculateCO2() {
     resultBoxes.forEach(box => {
         box.style.display = 'block';
     });
+
+    // Call the function to generate the shareable link
+    generateShareableLink(monthlyUsage, model, months);
 }
+
+function generateShareableLink(monthlyUsage, model, months) {
+    const shareableLink = `https://aicarboncalc.com/estimation?monthlyUsage=${encodeURIComponent(monthlyUsage)}&model=${encodeURIComponent(model)}&months=${encodeURIComponent(months)}`;
+    
+    // Display the link to the user or copy it to clipboard
+    const shareLinkButton = document.getElementById('shareLinkButton');
+    shareLinkButton.onclick = function() {
+        navigator.clipboard.writeText(shareableLink).then(() => {
+            alert('Link kopieret til udklipsholder!');
+        });
+    };
+    
+    // Show the share link button
+    shareLinkButton.style.display = 'block'; // Show the button after calculation
+}
+
+// Hide the share link button before calculation
+document.getElementById('calculateButton').addEventListener('click', function() {
+    document.getElementById('shareLinkButton').style.display = 'none'; // Hide the button before calculation
+});
 
 // Lyt efter "input" begivenhed på input-feltet
 document.getElementById('monthlyUsage').addEventListener('input', function() {
+    const maxLength = 15; // Sæt den ønskede maksimum længde
+    if (this.value.length > maxLength) {
+        this.value = this.value.slice(0, maxLength); // Skær inputtet til maksimum længden
+    }
     calculateCO2(); // Kald beregningsfunktionen
 });
 
+// Opdater månedsværdi, når slideren ændres
 document.getElementById('monthRange').addEventListener('input', function() {
     const monthValue = document.getElementById('monthValue');
     monthValue.innerText = `${this.value} måned${this.value > 1 ? 'er' : ''}`;
     calculateCO2(); // Kald beregningsfunktionen
 });
+
+// Eksempel på at opdatere carbon intensitet
+updateCarbonIntensity(403); // Sæt carbon intensitet til 403 gCO2/kWh (opdater dette tal månedligt)

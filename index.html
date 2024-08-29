@@ -6,6 +6,21 @@
     <title>CO2 BEREGNER FOR AI</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
     <link rel="stylesheet" href="css/css.css">
+    <style>
+        /* CSS til footer delingslinks */
+        .footer-links {
+            margin-top: 20px;
+        }
+        .footer-links a {
+            display: inline-block;
+            margin: 5px 10px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,24 +38,20 @@
             <label for="monthlyUsage">Samlet antal prompts via AI om måneden:</label>
             <input type="number" id="monthlyUsage" name="monthlyUsage" min="0" required>
             <br>
-            
             <label for="modelSelect">Vælg AI-model:</label>
             <select id="modelSelect">
                 <option value="4">ChatGPT-4</option>
                 <option value="4-mini">ChatGPT-4 Mini</option>
             </select>
             <br>
-
             <label for="monthRange">Vælg antal måneder:</label>
             <input type="range" id="monthRange" name="monthRange" min="1" max="12" value="1" title="Vælg antal måneder">
             <span id="monthValue">1 måned</span>
-            <br>
-            
-            
-            <button onclick="calculateCO2()">Beregn CO2</button>
+            <br>            
+            <button id="calculateButton">Beregn CO2</button>
             <p id="result"></p>
             <p id="yearlyResult"></p>
-        </section>     
+        </section>
     </main>
     <section class="results">
         <section class="result-box"> <!-- Skjul som standard -->
@@ -62,6 +73,14 @@
     </section>
     <footer>
         <p>&copy; 2024 CO2 BEREGNER FOR AI</p>
+        <div class="footer-links">
+            <h3>Del denne beregner:</h3>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.dinwebsite.dk" target="_blank">Facebook</a>
+            <a href="https://twitter.com/intent/tweet?url=https://www.dinwebsite.dk&text=Se%20denne%20CO2%20beregner!" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.dinwebsite.dk" target="_blank">LinkedIn</a>
+            <a href="https://api.whatsapp.com/send?text=https://www.dinwebsite.dk" target="_blank">WhatsApp</a>
+            <a href="mailto:?subject=Se%20denne%20CO2%20beregner&body=Jeg%20syntes%20du%20skulle%20se%20denne%20beregner:%20https://www.dinwebsite.dk">Email</a>
+        </div>
     </footer>
     <script src="js/js.js"></script>
 </body>

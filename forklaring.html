@@ -22,16 +22,16 @@
             <h2>Hvordan vi beregner CO2-udledning og ressourceforbrug</h2>
             
             <h3>1. Energi pr. brug</h3>
-            <p>Vi beregner energiforbruget pr. brug baseret på den valgte model. For ChatGPT-4 er energiforbruget 0.1938 kWh pr. brug, mens ChatGPT-4 Mini bruger 0.01938 kWh pr. brug. <a href="https://di.ku.dk/Nyheder/2023/hvad-kan-vi-goere-ved-ais-stigende-co2-aftryk/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a></p>
+            <p>Vi beregner energiforbruget pr. brug baseret på den valgte model. For ChatGPT-4 er energiforbruget 0.04845 kWh pr. brug, mens ChatGPT-4 Mini bruger 0.0004845 kWh pr. brug. <a href="https://di.ku.dk/Nyheder/2023/hvad-kan-vi-goere-ved-ais-stigende-co2-aftryk/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a></p>
             <p>Dette trin hjælper os med at forstå, hvor meget energi der bruges hver gang du interagerer med AI'en.</p>
-            <p><strong>Beregning:</strong> Energi pr. brug = 0.1938 kWh (ChatGPT-4) eller 0.01938 kWh (ChatGPT-4 Mini)</p>
+            <p><strong>Beregning:</strong> Energi pr. brug = 0.04845 kWh (ChatGPT-4) eller 0.0004845 kWh (ChatGPT-4 Mini)</p>
 
             <h3>2. Total kWh pr. måned</h3>
             <p>Det samlede energiforbrug pr. måned beregnes ved at gange det månedlige antal brug med energiforbruget pr. brug og justere for PUE (Power Usage Effectiveness), som angiver den samlede energi brugt af datacenteret, inklusive ineffektivitet som køling. For Microsoft Azure-datacentre bruger vi en gennemsnitlig PUE på 1.125.</p>
             <p><strong>Beregning:</strong> Total kWh pr. måned = (Månedligt antal brug) × (Energi pr. brug) × PUE</p>
 
             <h3>3. Total CO2-udledning</h3>
-            <p>Den samlede CO2-udledning i kilogram beregnes ved at gange det samlede energiforbrug pr. måned med den gennemsnitlige kulstofintensitet. For at sikre præcision anvender vi data fra forskellige områder og beregner et gennemsnit. Den præcise lokation for OpenAI's datacentre kan variere, men vi bruger data fra Texas som et repræsentativt eksempel. <a href="https://agio.com/where-is-chatgpt-hosted/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a> <a href="https://msandbu.org/openai-chatgpt-and-security-and-risks/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a></p>
+            <p>Den samlede CO2-udledning i kilogram beregnes ved at gange det samlede energiforbrug pr. måned med den gennemsnitlige månedlige kulstofintensitet. For at sikre præcision anvender vi data fra forskellige områder og beregner et gennemsnit. Den præcise lokation for OpenAI's datacentre kan variere, men vi bruger data fra Texas som et repræsentativt eksempel. <a href="https://agio.com/where-is-chatgpt-hosted/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a> <a href="https://msandbu.org/openai-chatgpt-and-security-and-risks/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a></p>
             <p>Dette trin konverterer dit energiforbrug til CO2-udledning, så vi kan se den miljømæssige påvirkning.</p>
             <p><strong>Beregning:</strong> Total CO2-udledning = (Total kWh pr. måned) × (Gennemsnitlig kulstofintensitet) / 1000</p>
 
