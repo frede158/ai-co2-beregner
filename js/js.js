@@ -25,6 +25,7 @@ function formatNumber(num) {
 async function calculateCO2() {
     const monthlyUsage = document.getElementById('monthlyUsage').value;
     const model = document.getElementById('modelSelect').value; // Hent valgt model
+    const generationType = document.getElementById('generationTypeSelect').value; // Hent valgt genereringstype
     const months = document.getElementById('monthRange').value; // Hent valgt antal måneder
 
     // Tjek om carbon intensity er sat
@@ -33,8 +34,14 @@ async function calculateCO2() {
         return;
     }
 
-    // EnergiBrug pr Prompt baseret på valgt model
-    const kWhPerUse = model === '4' ? 0.04845 : 0.0004845; // 0.04845 kWh for ChatGPT-4, 0.0004845 kWh for ChatGPT-4 Mini
+    // EnergiBrug pr Prompt baseret på valgt model og genereringstype
+    let kWhPerUse;
+    if (generationType === 'image') {
+        kWhPerUse = 2.907; // 2.907 kWh for billedgenerering
+    } else {
+        kWhPerUse = model === '4' ? 0.04845 : 0.0004845; // 0.04845 kWh for ChatGPT-4, 0.0004845 kWh for ChatGPT-4 Mini
+    }
+
     const totalKWhPerMonth = monthlyUsage * kWhPerUse * PUE; // Juster total kWh pr. måned med PUE
     const totalCO2 = (totalKWhPerMonth * carbonIntensity) / 1000; // omdanne til kg CO2
     const totalCO2ForMonths = totalCO2 * months; // Beregn CO2 for det valgte antal måneder
@@ -112,6 +119,10 @@ document.getElementById('monthRange').addEventListener('input', function() {
     monthValue.innerText = `${this.value} måned${this.value > 1 ? 'er' : ''}`;
     calculateCO2(); // Kald beregningsfunktionen
 });
+
+// Lyt efter ændringer i model og genereringstype
+document.getElementById('modelSelect').addEventListener('change', calculateCO2);
+document.getElementById('generationTypeSelect').addEventListener('change', calculateCO2);
 
 // Eksempel på at opdatere carbon intensitet
 updateCarbonIntensity(403); // Sæt carbon intensitet til 403 gCO2/kWh (opdater dette tal månedligt)

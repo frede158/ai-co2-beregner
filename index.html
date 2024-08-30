@@ -3,70 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CO2 BEREGNER FOR AI</title>
+    <title>AICarbonCalc</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
     <link rel="stylesheet" href="css/css.css">
-    <style>
-        /* CSS til footer delingslinks */
-        .footer-links {
-            margin-top: 20px;
-        }
-        .footer-links a {
-            display: inline-block;
-            margin: 5px 10px;
-            text-decoration: none;
-            color: #007BFF;
-        }
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1><a href="index.html">CO2 BEREGNER FOR AI</a></h1>
+        <h1><a href="index.html">AICarbonCalc</a></h1>
         <nav>
             <ul>
                 <li><a href="index.html">Beregner</a></li>
-                <li><a href="forklaring.html">Forklaring af beregner</a></li>
+                <li><a href="forklaring.html">Forklaring af beregning</a></li>
             </ul>
         </nav>
     </header>
     <main>
        <section class="co2-beregner">
             <h2>Hvor meget bruger i AI?</h2>
-            <label for="monthlyUsage">Samlet antal prompts via AI om måneden:</label>
-            <input type="number" id="monthlyUsage" name="monthlyUsage" min="0" required>
-            <br>
-            <label for="modelSelect">Vælg AI-model:</label>
-            <select id="modelSelect">
-                <option value="4">ChatGPT-4</option>
-                <option value="4-mini">ChatGPT-4 Mini</option>
-            </select>
-            <br>
-            <label for="monthRange">Vælg antal måneder:</label>
-            <input type="range" id="monthRange" name="monthRange" min="1" max="12" value="1" title="Vælg antal måneder">
-            <span id="monthValue">1 måned</span>
-            <br>            
+            <div class="input-group">
+                <label for="monthlyUsage">Antal prompts om måneden:</label>
+                <input type="number" id="monthlyUsage" name="monthlyUsage" min="0" required placeholder="0">
+            </div>
+            <div class="input-group">
+                <label for="modelSelect">Vælg AI-model:</label>
+                <select id="modelSelect">
+                    <option value="4">ChatGPT-4</option>
+                    <option value="4-mini">ChatGPT-4 Mini</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="generationTypeSelect">Vælg AI-genereringstype:</label>
+                <select id="generationTypeSelect">
+                    <option value="text">Text-generation</option>
+                    <option value="image">Billedgenerering</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="monthRange">Vælg antal måneder:</label>
+                <input type="range" id="monthRange" name="monthRange" min="1" max="12" value="1" title="Vælg antal måneder">
+                <span id="monthValue">1 måned</span>
+            </div>            
             <button id="calculateButton">Beregn CO2</button>
             <p id="result"></p>
             <p id="yearlyResult"></p>
         </section>
     </main>
     <section class="results">
-        <section class="result-box"> <!-- Skjul som standard -->
+        <section class="result-box" style="display: none;"> <!-- Skjul som standard -->
             <h3>⚡Mobilopladninger</h3>
             <div id="chargeResult"></div>
         </section>
-        <section class="result-box"> <!-- Skjul som standard -->
+        <section class="result-box" style="display: none;"> <!-- Skjul som standard -->
             <h3>💧Vand til nedkølning</h3>
             <div id="waterUsageResult"></div> <!-- Vandforbrug pr. prompt -->
         </section>
-        <section class="result-box"> <!-- Skjul som standard -->
+        <section class="result-box" style="display: none;"> <!-- Skjul som standard -->
             <h3>💡LED-pærer</h3>
             <div id="lightUsageResult"></div> <!-- Pærer der lyser i om året pr. prompt -->
         </section>
-        <section class="result-box"> <!-- Skjul som standard -->
+        <section class="result-box" style="display: none;"> <!-- Skjul som standard -->
             <h3>🔍Google søgninger</h3>
             <div id="searchResult"></div> <!-- Google søgninger pr år -->
         </section>
