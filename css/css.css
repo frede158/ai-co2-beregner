@@ -166,7 +166,7 @@ input[type="number"]:focus, select:focus {
 h2 {
   margin-bottom: 15px;
   font-size: 30px;
-  color:#3331C1;
+  color:#007BFF;
 }
 
 a {
@@ -213,4 +213,57 @@ a {
   padding: 10px;
   border-radius: 5px;
   margin-top: 20px;
+}
+
+.feedback-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.feedback-box input, .feedback-box textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.feedback-box button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.feedback-box button:hover {
+  background-color: #218838;
+}
+
+.complexity-buttons {
+  display: flex; /* Brug flexbox til at arrangere knapperne i en række */
+  gap: 15px; /* Tilføj afstand mellem knapperne */
+  margin-top: 10px; /* Tilføj lidt afstand over knapperne */
+}
+
+.complexity-button {
+  padding: 10px 40px; /* Juster padding for at gøre knapperne større */
+  border: none;
+  background-color: #007BFF; /* Primær farve */
+  color: white; /* Tekstfarve */
+  cursor: pointer;
+  border-radius: 5px; /* Rundede hjørner */
+  font-size: 16px; /* Størrelse på teksten */
+  transition: background-color 0.3s, transform 0.2s; /* Tilføj overgangseffekter */
+}
+
+.complexity-button:hover {
+  background-color: #0056b3; /* Mørkere blå ved hover */
+  transform: scale(1.05); /* Let forstørrelse ved hover */
+}
+
+.complexity-button.active {
+  background-color: #0056b3; /* Mørkere blå for den aktive knap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tilføj skygge til den aktive knap */
 }

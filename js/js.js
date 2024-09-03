@@ -1,5 +1,6 @@
 const PUE = 1.125; // Gennemsnitlig PUE for Microsoft Azure-datacentre
 let carbonIntensity = 403; // Definer en variabel til carbon intensitet
+let complexityFactor = 1; // Standard kompleksitetsfaktor
 
 // Funktion til at opdatere carbon intensitet
 function updateCarbonIntensity(newIntensity) {
@@ -22,6 +23,16 @@ function formatNumber(num) {
     return new Intl.NumberFormat('da-DK').format(num); // Formatér tallet til dansk format
 }
 
+// Lyt efter klik på kompleksitetsknapperne
+document.querySelectorAll('.complexity-button').forEach(button => {
+    button.addEventListener('click', function() {
+        complexityFactor = parseFloat(this.getAttribute('data-complexity')); // Hent kompleksitetsfaktoren fra knappen
+        document.querySelectorAll('.complexity-button').forEach(btn => btn.classList.remove('active')); // Fjern aktiv klasse fra alle knapper
+        this.classList.add('active'); // Tilføj aktiv klasse til den valgte knap
+        calculateCO2(); // Genberegn CO2 med den nye kompleksitet
+    });
+});
+
 async function calculateCO2() {
     const monthlyUsage = document.getElementById('monthlyUsage').value;
     const model = document.getElementById('modelSelect').value; // Hent valgt model
@@ -42,7 +53,8 @@ async function calculateCO2() {
         kWhPerUse = model === '4' ? 0.04845 : 0.0004845; // 0.04845 kWh for ChatGPT-4, 0.0004845 kWh for ChatGPT-4 Mini
     }
 
-    const totalKWhPerMonth = monthlyUsage * kWhPerUse * PUE; // Juster total kWh pr. måned med PUE
+    // Juster energiforbruget med kompleksitetsfaktoren
+    const totalKWhPerMonth = monthlyUsage * kWhPerUse * PUE * complexityFactor; // Juster total kWh pr. måned med PUE og kompleksitet
     const totalCO2 = (totalKWhPerMonth * carbonIntensity) / 1000; // omdanne til kg CO2
     const totalCO2ForMonths = totalCO2 * months; // Beregn CO2 for det valgte antal måneder
 
@@ -126,3 +138,20 @@ document.getElementById('generationTypeSelect').addEventListener('change', calcu
 
 // Eksempel på at opdatere carbon intensitet
 updateCarbonIntensity(403); // Sæt carbon intensitet til 403 gCO2/kWh (opdater dette tal månedligt)
+
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Forhindrer standard formularindsendelse
+
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Her kan du tilføje kode til at sende data til din server
+    // For eksempel ved hjælp af fetch API eller XMLHttpRequest
+
+    // Simulerer en succesfuld indsendelse
+    document.getElementById('responseMessage').innerText = 'Tak for din feedback!';
+    document.getElementById('responseMessage').style.display = 'block';
+
+    // Tømmer formularen
+    document.getElementById('feedbackForm').reset();
+});

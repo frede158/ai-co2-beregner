@@ -18,7 +18,7 @@
         </nav>
     </header>
     <main>
-       <section class="co2-beregner">
+        <section class="co2-beregner">
             <h2>Hvor meget bruger i AI?</h2>
             <div class="input-group">
                 <label for="monthlyUsage">Antal prompts om måneden:</label>
@@ -38,6 +38,17 @@
                     <option value="image">Billedgenerering</option>
                 </select>
             </div>
+            <div class="input-group">
+                <label>Vælg kompleksitet af dine prompts:</label>
+                <div class="complexity-buttons">
+                    <button id="complexityLow" class="complexity-button" data-complexity="1">Lav</button>
+                    <button id="complexityMedium" class="complexity-button" data-complexity="1.5">Medium</button>
+                    <button id="complexityHigh" class="complexity-button" data-complexity="2">Høj</button>
+                </div>
+            </div>
+            
+            
+            
             <div class="input-group">
                 <label for="monthRange">Vælg antal måneder:</label>
                 <input type="range" id="monthRange" name="monthRange" min="1" max="12" value="1" title="Vælg antal måneder">
@@ -66,17 +77,30 @@
             <div id="searchResult"></div> <!-- Google søgninger pr år -->
         </section>
     </section>
-    <footer>
-        <p>&copy; 2024 CO2 BEREGNER FOR AI</p>
-        <div class="footer-links">
-            <h3>Del denne beregner:</h3>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.dinwebsite.dk" target="_blank">Facebook</a>
-            <a href="https://twitter.com/intent/tweet?url=https://www.dinwebsite.dk&text=Se%20denne%20CO2%20beregner!" target="_blank">Twitter</a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.dinwebsite.dk" target="_blank">LinkedIn</a>
-            <a href="https://api.whatsapp.com/send?text=https://www.dinwebsite.dk" target="_blank">WhatsApp</a>
-            <a href="mailto:?subject=Se%20denne%20CO2%20beregner&body=Jeg%20syntes%20du%20skulle%20se%20denne%20beregner:%20https://www.dinwebsite.dk">Email</a>
+    <footer class="footer">
+        <div class="footer__addr">
+            <h1 class="footer__logo">AICarbonCalc</h1>
         </div>
-    </footer>
+        <div class="feedback-box">
+            <h3>Feedback</h3>
+            <form id="feedbackForm">
+                <input type="email" id="email" placeholder="Din email" required>
+                <textarea id="message" rows="4" placeholder="Din feedback" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <p id="responseMessage" style="color: green; display: none;"></p>
+        </div>
+        <div class="social-media">
+            <h2>Del gerne vores side:</h2>
+            <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a>
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        </div>
+        <div class="legal">
+            <p>&copy; 2024 Copyright AICo2Calc.</p>
+        </div>
+    </footer>     
     <script src="js/js.js"></script>
 </body>
 </html>
