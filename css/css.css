@@ -5,7 +5,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #dfdfdf;
-  color: #333;
+  color: #0803D3; /* Updated color */
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -14,7 +14,7 @@ body {
 
 header {
   background-color: transparent;
-  color: black;
+  color: #0803D3; /* Updated color */
   padding: 30px 80px;
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: black;
+  color: #0803D3; /* Updated color */
   text-decoration: none;
 }
 
@@ -82,7 +82,7 @@ main {
 button {
   width: 75%;
   padding: 10px;
-  background-color: #28a745;
+  background-color: #0803D3; /* Updated color */
   color: white;
   border: none;
   border-radius: 5px;
@@ -96,7 +96,7 @@ button:hover {
 
 h1, h2, h3 {
   margin-bottom: 20px;
-  color: #333; /* Rettet farven til en gyldig hex værdi */
+  color: #0803D3; /* Updated color */
 }
 
 #result, #yearlyResult {
@@ -166,16 +166,16 @@ input[type="number"]:focus, select:focus {
 h2 {
   margin-bottom: 15px;
   font-size: 30px;
-  color:#007BFF;
+  color:#0803D3;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #0803D3; /* Updated color */
 }
 
 .kilde {
-  color: blue;
+  color: #0803D3; /* Updated color */
   text-decoration: underline;
 }
 
@@ -231,7 +231,7 @@ a {
 }
 .feedback-box button {
   padding: 10px;
-  background-color: #28a745;
+  background-color: #0803D3; /* Updated color */
   color: white;
   border: none;
   border-radius: 5px;
@@ -248,22 +248,81 @@ a {
 }
 
 .complexity-button {
-  padding: 10px 40px; /* Juster padding for at gøre knapperne større */
-  border: none;
-  background-color: #007BFF; /* Primær farve */
-  color: white; /* Tekstfarve */
+  padding: 10px 40px;
+  border: 2px solid #0803D3; /* Sort border */
+  background-color: transparent; /* Transparent baggrund */
+  color: #0803D3; /* Sort tekstfarve */
   cursor: pointer;
-  border-radius: 5px; /* Rundede hjørner */
-  font-size: 16px; /* Størrelse på teksten */
-  transition: background-color 0.3s, transform 0.2s; /* Tilføj overgangseffekter */
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
 .complexity-button:hover {
-  background-color: #0056b3; /* Mørkere blå ved hover */
-  transform: scale(1.05); /* Let forstørrelse ved hover */
+  background-color: #f0f0f0; /* Lys grå baggrund ved hover */
+  transform: scale(1.05);
 }
 
 .complexity-button.active {
-  background-color: #0056b3; /* Mørkere blå for den aktive knap */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tilføj skygge til den aktive knap */
+  background-color: #0803D3; /* Sort baggrund for aktiv knap */
+  color: #fff; /* Hvid tekstfarve for aktiv knap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+#footer-title {
+  color: #0803D3; /* Updated color */
+  font-size: 120%;
+}
+
+.email-button {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 10px 20px;
+  background-color: #0803D3; /* Updated color */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.email-button:hover {
+  background-color: #0056b3;
+}
+
+nav ul li a {
+  color: #0803D3; /* Updated color */
+  text-decoration: none;
+  padding: 10px 15px; /* Tilføj padding */
+  border-radius: 5px; /* Afrundede hjørner */
+  transition: background-color 0.3s, color 0.3s; /* Glidende overgang */
+}
+
+nav ul li a:hover {
+  background-color: #0803D3; /* Baggrundsfarve ved hover */
+  color: white; /* Tekstfarve ved hover */
+}
+
+nav ul li a:active {
+  background-color: #0803D3; /* Sort baggrund for aktiv knap */
+  color: #fff; /* Hvid tekstfarve for aktiv knap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+  .info-box {
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto; /* Center the box and give some space around it */
+    padding: 2%;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Align text to the left inside the box */
+  }
+
+  @media (max-width: 600px) {
+    .info-box {
+      width: 100%;
+      display: block;
+    }
+  }

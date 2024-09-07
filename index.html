@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1><a href="index.html">AICarbonCalc</a></h1>
+        <h1><a href="index.html"><img src="images/ai-carbo-calc.png" alt="AICarbonCalc Logo" style="height: 50px; vertical-align: middle;"> AICarbonCalc</a></h1>
         <nav>
             <ul>
                 <li><a href="index.html">Beregner</a></li>
@@ -46,9 +46,6 @@
                     <button id="complexityHigh" class="complexity-button" data-complexity="2">Høj</button>
                 </div>
             </div>
-            
-            
-            
             <div class="input-group">
                 <label for="monthRange">Vælg antal måneder:</label>
                 <input type="range" id="monthRange" name="monthRange" min="1" max="12" value="1" title="Vælg antal måneder">
@@ -77,25 +74,34 @@
             <div id="searchResult"></div> <!-- Google søgninger pr år -->
         </section>
     </section>
+    <section class="info-box">
+        <h2>Hurtig Guide</h2>
+        <ul>
+            <li><strong>Antal prompts om måneden:</strong> Indtast hvor mange prompts du bruger hver måned.</li>
+            <li><strong>Vælg AI-model:</strong> Vælg hvilken AI-model du bruger.</li>
+            <li><strong>Vælg AI-genereringstype:</strong> Vælg om du bruger AI til tekst- eller billedgenerering.</li>
+            <li><strong>Vælg kompleksitet af dine prompts:</strong> Vælg hvor komplekse dine prompts er (Lav, Medium, Høj). F.eks. er at stille er spørgsmål mindre komplekst end at bede den om at rette dit essay</li>
+            <li><strong>Vælg antal måneder:</strong> Vælg hvor mange måneder du vil beregne for.</li>
+        </ul>
+    </section>
+    
     <footer class="footer">
-        <div class="footer__addr">
-            <h1 class="footer__logo">AICarbonCalc</h1>
-        </div>
-        <div class="feedback-box">
-            <h3>Feedback</h3>
-            <form id="feedbackForm">
-                <input type="email" id="email" placeholder="Din email" required>
-                <textarea id="message" rows="4" placeholder="Din feedback" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-            <p id="responseMessage" style="color: green; display: none;"></p>
-        </div>
         <div class="social-media">
-            <h2>Del gerne vores side:</h2>
-            <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a>
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-            <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <h2 id="footer-title">Del vores side på sociale medier:</h2>
+            <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                <img src="images/icons8-facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                <img src="images/icons8-twitterx.svg" alt="Twitter" />
+            </a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                <img src="images/icons8-instagram.svg" alt="Instagram" />
+            </a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                <img src="images/icons8-linkedin.svg" alt="LinkedIn" />
+            </a>
+        <div>
+            <a href="mailto:your-email@example.com" class="email-button">Send os en email</a> <!-- Tilføjet email-knap -->
         </div>
         <div class="legal">
             <p>&copy; 2024 Copyright AICo2Calc.</p>
