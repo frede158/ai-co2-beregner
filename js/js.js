@@ -60,10 +60,9 @@ async function calculateCO2() {
     const kWhPerCharge = 0.015; // kWh per mobile charge
     const chargesForMonths = (totalKWhPerMonth / kWhPerCharge) * months;
 
-    // Calculate annual water usage
-    const waterUsagePerPrompt = 0.5 / 25; // Water usage per prompt
-    const yearlyWaterUsage = monthlyUsage * waterUsagePerPrompt * 12;
-    const waterUsageForMonths = (yearlyWaterUsage / 12) * months;
+    // Calculate driving distance in a gasoline car
+    const co2PerKm = 120; // Average CO2 emissions per km for a gasoline car in gCO2
+    const drivingDistance = (totalCO2ForMonths * 1000) / co2PerKm; // Convert kg to g
 
     // Calculate hours a bulb can light
     const wattage = 7; // Wattage of the bulb
@@ -72,13 +71,13 @@ async function calculateCO2() {
 
     // Calculate Google searches
     const kWhPerSearch = 0.0003; // Energy per Google search
-    const googleSearches = (yearlyWaterUsage / kWhPerSearch) * (months / 12);
+    const googleSearches = (totalCO2ForMonths / kWhPerSearch) * (months / 12);
 
     // Update results
     document.getElementById('result').innerHTML = `Din CO2-udledning er <span class="bold">${totalCO2ForMonths.toFixed(2)} kg CO2</span> for ${months} måned${months > 1 ? 'er' : ''}.`;
     document.getElementById('yearlyResult').innerHTML = `Din CO2-udledning er <span class="bold">${(totalCO2 * 12).toFixed(2)} kg CO2</span> om året.`;
     document.getElementById('chargeResult').innerHTML = `Dette svarer til <span class="bold">${formatNumber(chargesForMonths.toFixed(0))}</span> mobilopladninger for ${months} måned${months > 1 ? 'er' : ''}.`;
-    document.getElementById('waterUsageResult').innerHTML = `Vandforbrug til nedkølning af datacentre for ${months} måned${months > 1 ? 'er' : ''}: <span class="bold">${waterUsageForMonths.toFixed(2)} liter</span>.`;
+    document.getElementById('drivingDistanceResult').innerHTML = `Dette svarer til en kørsel på <span class="bold">${formatNumber(drivingDistance.toFixed(0))}</span> km i en benzinbil for ${months} måned${months > 1 ? 'er' : ''}.`;
     document.getElementById('lightUsageResult').innerHTML = `Pæren kan lyse i <span class="bold">${formatHoursToDays(hoursLight)}</span> baseret på dit AI-forbrug.`;
     document.getElementById('searchResult').innerHTML = `Dette svarer til <span class="bold">${formatNumber(googleSearches.toFixed(0))}</span> Google-søgninger for ${months} måned${months > 1 ? 'er' : ''} 🔍.`;
 

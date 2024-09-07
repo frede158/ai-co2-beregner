@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1><a href="index.html">AICarbonCalc</a></h1>
+        <h1><a href="index.html"><img src="images/ai-carbo-calc.png" alt="AICarbonCalc Logo" style="height: 50px; vertical-align: middle;"> AICarbonCalc</a></h1>
         <nav>
             <ul>
                 <li><a href="index.html">Beregner</a></li>
@@ -31,7 +31,7 @@
             <p><strong>Beregning:</strong> Total kWh pr. måned = (Månedligt antal brug) × (Energi pr. brug) × PUE</p>
 
             <h3>3. Total CO2-udledning</h3>
-            <p>Den samlede CO2-udledning i kilogram beregnes ved at gange det samlede energiforbrug pr. måned med den gennemsnitlige månedlige kulstofintensitet. For at sikre præcision anvender vi data fra forskellige områder og beregner et gennemsnit. Den præcise lokation for OpenAI's datacentre kan variere, men vi bruger data fra Texas som et repræsentativt eksempel. <a href="https://agio.com/where-is-chatgpt-hosted/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a> <a href="https://msandbu.org/openai-chatgpt-and-security-and-risks/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a></p>
+            <p>Den samlede CO2-udledning i kilogram beregnes ved at gange det samlede energiforbrug pr. måned med den gennemsnitlige kulstofintensitet. For at sikre præcision anvender vi data fra forskellige områder og beregner et gennemsnit. Den præcise lokation for OpenAI's datacentre kan variere, men vi bruger data fra Texas som et repræsentativt eksempel. <a href="https://agio.com/where-is-chatgpt-hosted/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a> <a href="https://msandbu.org/openai-chatgpt-and-security-and-risks/" class="kilde" target="_blank" onclick="openInNewTab(event)">Kilde</a></p>
             <p>Dette trin konverterer dit energiforbrug til CO2-udledning, så vi kan se den miljømæssige påvirkning.</p>
             <p><strong>Beregning:</strong> Total CO2-udledning = (Total kWh pr. måned) × (Gennemsnitlig kulstofintensitet) / 1000</p>
 
@@ -56,8 +56,31 @@
             <p><strong>Beregning:</strong> Timer pæren kan lyse = (Total kWh pr. måned) / (Wattforbrug pr. time)</p>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2024 CO2 BEREGNER FOR AI</p>
+    <footer class="footer">
+        <div class="social-media">
+            <h2 id="footer-title">Del gerne vores side med dine venner!</h2>
+            <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                <img src="images/icons8-facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                <img src="images/icons8-twitterx.svg" alt="Twitter" />
+            </a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                <img src="images/icons8-instagram.svg" alt="Instagram" />
+            </a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                <img src="images/icons8-linkedin.svg" alt="LinkedIn" />
+            </a>
+        </div>
+        <div>
+            <a href="juridisk.html" class="privacy-policy-link">Juridisk & Privatlivspolitik</a>
+        </div>
+        <div style="padding: 10px;">
+            <a href="mailto:your-email@example.com" class="email-button">Send os en email</a>
+        </div>
+        <div class="legal">
+            <p>&copy; 2024 Copyright AICo2Calc.</p>
+        </div>
     </footer>
     <script src="js/js.js"></script>
 </body>
