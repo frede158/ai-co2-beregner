@@ -9,17 +9,35 @@
 </head>
 <body>
     <header>
-        <h1><a href="index.html"><img src="images/ai-carbo-calc.png" alt="AICarbonCalc Logo" style="height: 50px; vertical-align: middle;"> AICarbonCalc</a></h1>
-        <nav>
+        <h1><a href="forside.html"><img src="images/ai-carbo-calc.png" alt="AICarbonCalc Logo" style="height: 50px; vertical-align: middle;"> AICarbonCalc</a></h1>
+        <nav class="desktop-menu">
             <ul>
+                <li><a href="forside.html">Forside</a></li>
                 <li><a href="index.html">Beregner</a></li>
                 <li><a href="forklaring.html">Forklaring af beregning</a></li>
+                <li><a href="hvorfor.html">Hvorfor</a></li>
             </ul>
         </nav>
+        <div class="burger-menu">
+            <div class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="mobile-menu">
+                <span class="close-menu">&times;</span>
+                <ul>
+                    <li><a href="forside.html">Forside</a></li>
+                    <li><a href="index.html">Beregner</a></li>
+                    <li><a href="forklaring.html">Forklaring af beregning</a></li>
+                    <li><a href="hvorfor.html">Hvorfor</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <section class="co2-beregner">
-            <h2>Hvor meget bruger i AI?</h2>
+            <h2>Hvor meget bruger du AI?</h2>
             <div class="input-group">
                 <label for="monthlyUsage">Antal prompts om måneden:</label>
                 <input type="number" id="monthlyUsage" name="monthlyUsage" min="0" required placeholder="0">
@@ -74,43 +92,57 @@
             <div id="drivingDistanceResult"></div> <!-- Kørsel i benzinbil pr. prompt -->
         </section>
     </section>
-    <section class="info-box">
-        <h2>Hurtig Guide</h2>
-        <ul>
-            <li><strong>Antal prompts om måneden:</strong> Indtast hvor mange prompts du bruger hver måned.</li>
-            <li><strong>Vælg AI-model:</strong> Vælg hvilken AI-model du bruger.</li>
-            <li><strong>Vælg AI-genereringstype:</strong> Vælg om du bruger AI til tekst- eller billedgenerering.</li>
-            <li><strong>Vælg kompleksitet af dine prompts:</strong> Vælg hvor komplekse dine prompts er (Lav, Medium, Høj). F.eks. er at stille er spørgsmål mindre komplekst end at bede den om at rette dit essay</li>
-            <li><strong>Vælg antal måneder:</strong> Vælg hvor mange måneder du vil beregne for.</li>
-        </ul>
-    </section>
-   <footer class="footer">
-    <div class="social-media">
-        <h2 id="footer-title">Del gerne vores side med dine venner!</h2>
-        <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
-            <img src="images/icons8-facebook.svg" alt="Facebook" />
-        </a>
-        <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
-            <img src="images/icons8-twitterx.svg" alt="Twitter" />
-        </a>
-        <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
-            <img src="images/icons8-instagram.svg" alt="Instagram" />
-        </a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-            <img src="images/icons8-linkedin.svg" alt="LinkedIn" />
-        </a>
+    <div class="info-container">
+        <section class="info-box">
+            <h2>Hurtig Guide</h2>
+            <ul>
+                <li><strong>Antal prompts om måneden:</strong> Indtast hvor mange prompts du bruger hver måned.</li>
+                <li><strong>Vælg AI-model:</strong> Vælg hvilken AI-model du bruger.</li>
+                <li><strong>Vælg AI-genereringstype:</strong> Vælg om du bruger AI til tekst- eller billedgenerering.</li>
+                <li><strong>Vælg kompleksitet af dine prompts:</strong> Vælg hvor komplekse dine prompts er (Lav, Medium, Høj). F.eks. er at stille er spørgsmål mindre komplekst end at bede den om at rette dit essay</li>
+                <li><strong>Vælg antal måneder:</strong> Vælg hvor mange måneder du vil beregne for.</li>
+            </ul>
+        </section>
+        <section class="info-box">
+            <h2>Yderligere Information</h2>
+            <ul>
+                <li><strong>CO2-udledning:</strong> Beregner den samlede CO2-udledning baseret på dit forbrug.</li>
+                <li><strong>Energi pr. brug:</strong> Viser energiforbruget pr. brug af AI-modellen.</li>
+                <li><strong>Årlig CO2-udledning:</strong> Estimerer din årlige CO2-udledning.</li>
+                <li><strong>Mobilopladninger:</strong> Sammenligner energiforbruget med antallet af mobilopladninger.</li>
+                <li><strong>LED-pærer:</strong> Viser hvor mange timer en LED-pære kan lyse baseret på dit forbrug.</li>
+            </ul>
+        </section>
     </div>
-    <div>
-        <a href="juridisk.html" class="privacy-policy-link">Juridisk & Privatlivspolitik</a>
-    </div>
-    <div style="padding: 10px;">
-        <a href="mailto:your-email@example.com" class="email-button">Send os en email</a>
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h2 id="footer-title">Del gerne vores side med dine venner!</h2>
+            <div class="social-media">
+                <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                    <img src="images/icons8-facebook.svg" alt="Facebook" />
+                </a>
+                <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                    <img src="images/icons8-twitterx.svg" alt="Twitter" />
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                    <img src="images/icons8-instagram.svg" alt="Instagram" />
+                </a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                    <img src="images/icons8-linkedin.svg" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <a href="juridisk.html" class="footer-link">Juridisk & Privatlivspolitik</a>
+            <a href="mailto:your-email@example.com" class="footer-link email-button">Send os en email</a>
+        </div>
     </div>
     <div class="legal">
-        <p>&copy; 2024 Copyright AICo2Calc.</p>
+        <p>&copy; 2024 Copyright AICarbonCalc.</p>
     </div>
 </footer>
-     
-    <script src="js/js.js"></script>
+    <script src="js/js.js">defer</script>
+    <script src="js/burger-menu.js"></script>
 </body>
 </html>

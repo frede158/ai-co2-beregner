@@ -9,13 +9,31 @@
 </head>
 <body>
     <header>
-        <h1><a href="index.html"><img src="images/ai-carbo-calc.png" alt="AICarbonCalc Logo" style="height: 50px; vertical-align: middle;"> AICarbonCalc</a></h1>
-        <nav>
+        <h1><a href="forside.html"><img src="images/ai-carbo-calc.png" alt="AICarbonCalc Logo" style="height: 50px; vertical-align: middle;"> AICarbonCalc</a></h1>
+        <nav class="desktop-menu">
             <ul>
+                <li><a href="forside.html">Forside</a></li>
                 <li><a href="index.html">Beregner</a></li>
                 <li><a href="forklaring.html">Forklaring af beregning</a></li>
+                <li><a href="hvorfor.html">Hvorfor</a></li>
             </ul>
         </nav>
+        <div class="burger-menu">
+            <div class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="mobile-menu">
+                <span class="close-menu">&times;</span>
+                <ul>
+                    <li><a href="forside.html">Forside</a></li>
+                    <li><a href="index.html">Beregner</a></li>
+                    <li><a href="forklaring.html">Forklaring af beregning</a></li>
+                    <li><a href="hvorfor.html">Hvorfor</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <div class="co2-beregner2">
@@ -39,7 +57,7 @@
                 </ul>
     
                 <h3>Personoplysninger</h3>
-                <p>Generelt AICo2Calc lever op til EU's persondataforordning (GDPR), der har til formål at beskytte dine personoplysninger.</p>
+                <p>Generelt AICarbonCalc lever op til EU's persondataforordning (GDPR), der har til formål at beskytte dine personoplysninger.</p>
                 <p>Personoplysninger er alle slags informationer, der i et eller andet omfang kan henføres til dig. Når du benytter vores website, indsamler og behandler vi en række sådanne informationer. Det sker f.eks. ved almindelig tilgang af indhold, hvis du tilmelder dig vores nyhedsbrev, deltager i konkurrencer eller undersøgelser, registrerer dig som bruger eller abonnent, eller foretager køb via websitet.</p>
                 <p>Vi indsamler og behandler typisk følgende typer af oplysninger: Et unikt ID og tekniske oplysninger om din computer, tablet eller mobiltelefon, dit IP-nummer, geografisk placering, samt hvilke sider du klikker på (interesser). I det omfang du selv giver eksplicit samtykke hertil og selv indtaster informationerne, behandles desuden: Navn, telefonnummer, e-mail, adresse og betalingsoplysninger. Det vil typisk være i forbindelse med oprettelse af login eller ved køb.</p>
     
@@ -62,36 +80,39 @@
                 <p>Hvis de oplysninger, der behandles om dig, er forkerte, har du ret til, at de bliver rettet eller slettet. Henvendelse herom kan ske til [indsæt kontakt-e-mail]. Hvis du vil klage over vores behandling af dine personoplysninger, har du også mulighed for at tage kontakt til Datatilsynet.</p>
     
                 <h3>Udgiver</h3>
-                <p>AICo2Calc</p>
+                <p>AICarbonCalc</p>
             </div>
         </div>
     </main>
     <footer class="footer">
-        <div class="social-media">
-            <h2 id="footer-title">Del gerne vores side med dine venner!</h2>
-            <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
-                <img src="images/icons8-facebook.svg" alt="Facebook" />
-            </a>
-            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
-                <img src="images/icons8-twitterx.svg" alt="Twitter" />
-            </a>
-            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
-                <img src="images/icons8-instagram.svg" alt="Instagram" />
-            </a>
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-                <img src="images/icons8-linkedin.svg" alt="LinkedIn" />
-            </a>
-        </div>
-        <div>
-            <a href="juridisk.html" class="privacy-policy-link">Juridisk & Privatlivspolitik</a>
-        </div>
-        <div style="padding: 10px;">
-            <a href="mailto:your-email@example.com" class="email-button">Send os en email</a>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2 id="footer-title">Del gerne vores side med dine venner!</h2>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                        <img src="images/icons8-facebook.svg" alt="Facebook" />
+                    </a>
+                    <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                        <img src="images/icons8-twitterx.svg" alt="Twitter" />
+                    </a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                        <img src="images/icons8-instagram.svg" alt="Instagram" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                        <img src="images/icons8-linkedin.svg" alt="LinkedIn" />
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <a href="juridisk.html" class="footer-link">Juridisk & Privatlivspolitik</a>
+                <a href="mailto:your-email@example.com" class="footer-link email-button">Send os en email</a>
+            </div>
         </div>
         <div class="legal">
-            <p>&copy; 2024 Copyright AICo2Calc.</p>
+            <p>&copy; 2024 Copyright AICarbonCalc.</p>
         </div>
     </footer>
     <script src="js/js.js"></script>
+    <script src="js/burger-menu.js"></script>
 </body>
 </html>

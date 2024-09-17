@@ -74,12 +74,12 @@ async function calculateCO2() {
     const googleSearches = (totalCO2ForMonths / kWhPerSearch) * (months / 12);
 
     // Update results
-    document.getElementById('result').innerHTML = `Din CO2-udledning er <span class="bold">${totalCO2ForMonths.toFixed(2)} kg CO2</span> for ${months} måned${months > 1 ? 'er' : ''}.`;
+    document.getElementById('result').innerHTML = `Din CO2-udledning er <span class="bold">${totalCO2ForMonths.toFixed(2)} kg CO2</span> på ${months} måned${months > 1 ? 'er' : ''}.`;
     document.getElementById('yearlyResult').innerHTML = `Din CO2-udledning er <span class="bold">${(totalCO2 * 12).toFixed(2)} kg CO2</span> om året.`;
-    document.getElementById('chargeResult').innerHTML = `Dette svarer til <span class="bold">${formatNumber(chargesForMonths.toFixed(0))}</span> mobilopladninger for ${months} måned${months > 1 ? 'er' : ''}.`;
-    document.getElementById('drivingDistanceResult').innerHTML = `Dette svarer til en kørsel på <span class="bold">${formatNumber(drivingDistance.toFixed(0))}</span> km i en benzinbil for ${months} måned${months > 1 ? 'er' : ''}.`;
+    document.getElementById('chargeResult').innerHTML = `Dette svarer til <span class="bold">${formatNumber(chargesForMonths.toFixed(0))}</span> mobilopladninger på ${months} måned${months > 1 ? 'er' : ''}.`;
+    document.getElementById('drivingDistanceResult').innerHTML = `Dette svarer til at kører <span class="bold">${formatNumber(drivingDistance.toFixed(0))}</span> km i en standard-benzinbil.`;
     document.getElementById('lightUsageResult').innerHTML = `Pæren kan lyse i <span class="bold">${formatHoursToDays(hoursLight)}</span> baseret på dit AI-forbrug.`;
-    document.getElementById('searchResult').innerHTML = `Dette svarer til <span class="bold">${formatNumber(googleSearches.toFixed(0))}</span> Google-søgninger for ${months} måned${months > 1 ? 'er' : ''} 🔍.`;
+    document.getElementById('searchResult').innerHTML = `Dette svarer til <span class="bold">${formatNumber(googleSearches.toFixed(0))}</span> Google-søgninger på ${months} måned${months > 1 ? 'er' : ''} 🔍.`;
 
     // Show result boxes
     document.querySelectorAll('.result-box').forEach(box => {
@@ -109,3 +109,4 @@ document.getElementById('generationTypeSelect').addEventListener('change', calcu
 
 // Example of updating carbon intensity
 updateCarbonIntensity(403); // Set carbon intensity to 403 gCO2/kWh
+
