@@ -1,11 +1,13 @@
-# Boilerplate: HTML5, CSS and JavaScript
+# AICarbonCalc
 
-Here's a quick start for any project.
+Summurization
 
 ## Usage
 
-* Copy the folder named `boilerplate` in your Filemagager
-* Paste the folder somewhere suitable.
-* Rename the folder to something usefull.
+* Put in the estimated usage of AI within a month. 
+* Choose the level of complexetiy of the prompts. 
+* Get estimation of monthly & yearly co2 emmisions caused inderiecly from your use. 
 
-That's it!
+
+
+Copyright AICarbonCalc
